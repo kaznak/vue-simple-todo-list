@@ -16,14 +16,8 @@
 	</noscript>
 
 	<div id="app">
-	    <h1>Todo List</h1>
-	    <todo-list v-bind:todo-list="todoList"></todo-list>
-	    <input-todo v-bind:todo-list="todoList"
-			placeholder="Enter todo and press enter. ">
-	    </input-todo>
-	    <button v-on:click="todoList.cleanChecked()">
-		delete checked
-	    </button>
+	    <todo-app title="Todo List" v-bind:todo-list="todoList">
+	    </todo-app>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
