@@ -1,7 +1,7 @@
 
 function Todo(text, isChecked) {
     this.text = text
-    this.isChecked = isChecked
+    this.isChecked = isChecked ? true : false
     this.flipCheck = function() {
         this.isChecked = ! this.isChecked
         return this
