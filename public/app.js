@@ -57,16 +57,15 @@ Vue.component('inputTodo', {
 
 //////////////////////////////////////////////////////////////////////////
 
-var todoList = new TodoList([
-    new Todo("Pick up Paycheck", true),
-    new Todo("Cash Paycheck"),
-    new Todo("Get Milk"),
-])
 
 var app = new Vue({
     el: '#app',
     data: {
-        todoList : todoList,
+        todoList : new TodoList([
+            new Todo("Pick up Paycheck", true),
+            new Todo("Cash Paycheck"),
+            new Todo("Get Milk"),
+        ]),
         newTodoField : ""
     },
 })
