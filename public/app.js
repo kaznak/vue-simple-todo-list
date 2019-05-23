@@ -36,6 +36,27 @@ function TodoList(init) {
 
 //////////////////////////////////////////////////////////////////////////
 
+Vue.component('todoList', {
+    props : ['todoList'],
+    template: '<ul><li v-for="item in todoList.todoList" v-bind:key="item.id" v-on:click="item.flipCheck()"><p v-bind:class="{ done: item.isChecked }">{{ item.text }}</p></li></ul>',
+})
+
+Vue.component('inputTodo', {
+    props : ['todoList','placeholder'],
+    data : function() { return {
+        newTodoField : "",
+    } },
+    template: '<input type="text" v-bind:placeholder="placeholder" v-model="newTodoField" v-on:keyup.enter="addTodo()" />',
+    methods : {
+        addTodo : function() {
+            this.todoList.addTodo(this.newTodoField)
+            this.newTodoField = ""
+        }
+    }
+})
+
+//////////////////////////////////////////////////////////////////////////
+
 var todoList = new TodoList([
     new Todo("Pick up Paycheck", true),
     new Todo("Cash Paycheck"),
