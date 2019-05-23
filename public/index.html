@@ -18,19 +18,19 @@
 	<div id="app">
 	    <h1>Todo List</h1>
 	    <ul>
-		<li v-for="item in todos"
-		    v-bind:key="item.id"
-		    v-on:click="flipCheck(item)">
-		    <p v-bind:class="{ done: item.isChecked }">
-			{{ item.text }}
+		<li v-for="todo in todoList.todoList"
+		    v-bind:key="todo.id"
+		    v-on:click="todo.flipCheck()">
+		    <p v-bind:class="{ done: todo.isChecked }">
+			{{ todo.text }}
 		    </p>
 		</li>
 	    </ul>
 	    <input type="text"
 		   placeholder="Enter todo and press enter. "
 		   v-model="newTodoField"
-		   v-on:keyup.enter="addTodo()" />
-	    <button v-on:click="cleanChecked">
+		   v-on:keyup.enter="todoList.addTodo(newTodoField);newTodoField='';" />
+	    <button v-on:click="todoList.cleanChecked()">
 		delete checked
 	    </button>
 	</div>
