@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="./favicon.ico">
+	<title>Vue Simple Todo List</title>
+    </head>
+    <style>
+     .done { text-decoration: line-through; }
+    </style>
+    <body>
+	<noscript>
+	    <strong>We're sorry but 2019-05.todo-list doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+	</noscript>
+
+	<div id="app">
+	    <h1>Todo List</h1>
+	    <ul>
+		<li v-for="item in todos"
+		    v-bind:key="item.id"
+		    v-on:click="flipCheck(item)">
+		    <p v-bind:class="{ done: item.isChecked }">
+			{{ item.text }}
+		    </p>
+		</li>
+	    </ul>
+	    <input type="text"
+		   placeholder="Enter todo and press enter. "
+		   v-model="newTodoField"
+		   v-on:keyup.enter="addTodo()" />
+	    <button v-on:click="cleanChecked">
+		delete checked
+	    </button>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./app.js"></script>
+    </body>
+</html>
