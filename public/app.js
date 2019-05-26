@@ -10,6 +10,8 @@ function Todo(text, isChecked) {
 }
 
 function TodoList(init) {
+    // init.filter(x => x.id != undefined)
+
     if(init == undefined) {
         this.count = 0
         this.todoList = []
@@ -19,6 +21,13 @@ function TodoList(init) {
             e.id = i
             return e
         })
+    }
+    // TODO addTodo should take contents item.
+    this.add = function(item) {
+        this.count += 1
+        item.id = this.count
+        this.todoList.push(item)
+        return this
     }
     this.addTodo = function(text, checked) {
         this.count += 1
