@@ -5,21 +5,27 @@ export default class IdArray {
         if(init == undefined){
             this.count = 0
             this.array = []
+        } else if(Array.isArray(init)) {
+            if(init.every(x => x.id == undefined)) {
+                this.count = init.length
+                init.forEach((e, i) => e.id = i)
+                this.array = init
+            } else {
+                throw "item has id property."
+            }
         } else {
-            this.count = init.length
-            init.forEach((e, i) => e.id = i)
-            this.array = init
+            throw "initial value does not Array."
         }
     }
     push(item) {
         // assert(item.id == undefined)
-        this.count += 1
         item.id = this.count
+        this.count += 1
         this.array.push(item)
         return this
     }
-    filter(prop) {
-        this.array = this.array.filter(prop)
+    filter(pred) {
+        this.array = this.array.filter(pred)
         return this
     }
 }
