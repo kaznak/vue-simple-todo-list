@@ -16,7 +16,7 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <HelloWorld msg="Welcome to Vuetify"/>
     </v-content>
   </v-app>
 </template>
