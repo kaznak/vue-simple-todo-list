@@ -1,7 +1,6 @@
 
 export default class IdArray {
     constructor(init) {
-        // assert(init.every(x => x.id == undefined))
         if(init == undefined){
             this.count = 0
             this.array = []
@@ -18,11 +17,14 @@ export default class IdArray {
         }
     }
     push(item) {
-        // assert(item.id == undefined)
-        item.id = this.count
-        this.count += 1
-        this.array.push(item)
-        return this
+        if(item.id == undefined) {
+            item.id = this.count
+            this.count += 1
+            this.array.push(item)
+            return this
+        } else {
+            throw "item has id property."
+        }
     }
     filter(pred) {
         this.array = this.array.filter(pred)
