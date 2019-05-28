@@ -29,7 +29,7 @@
 	<v-text-field
 	  v-model="newTodoField"
 	  v-bind:label="placeholder"
-	  v-on:keyup.enter="pushTodo(newTodoField)"
+	  v-on:keyup.enter="pushTodo()"
 	  required >
 	</v-text-field>
 	<v-spacer></v-spacer>
@@ -54,7 +54,7 @@ export default {
 	newTodoField : ""
     }),
     methods : {
-	pushTodo : function(text) {
+	pushTodo : function() {
 	    if(this.newTodoField.trim()!=''){
 		this.todoList.push({
 		    text : this.newTodoField,
