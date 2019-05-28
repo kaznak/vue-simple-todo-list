@@ -21,8 +21,8 @@
 
     <v-content>
       <TodoApp title="Todo List"
-	       v-bind:todo-list="todoList"
-	       placeholder="Enter todo and press enter. "/>
+        v-bind:todo-list="todoList"
+        placeholder="Enter todo and press enter. "/>
     </v-content>
   </v-app>
 </template>
@@ -32,16 +32,16 @@ import TodoApp from './components/TodoApp'
 import IdArray from './lib/IdArray'
 
 export default {
-    name: 'App',
-    components: {
- TodoApp
-    },
-    data : () => ({
-todoList : new IdArray([
-{ text : "Pick up Paycheck", isChecked : true },
-{ text : "Cash Paycheck", isChecked : false },
-{ text : "Get Milk", isChecked : false },
-])
-})
+  name: 'App',
+  components: {
+    TodoApp
+  },
+  data : () => ({
+    todoList : new IdArray([
+      { text : "Pick up Paycheck", isChecked : true },
+      { text : "Cash Paycheck", isChecked : false },
+      { text : "Get Milk", isChecked : false },
+    ])
+  })
 }
 </script>
