@@ -40,7 +40,8 @@
       "eslint:recommended"
     ],
     "rules": {
-      "vue/script-indent": ["warn"]
+      "vue/script-indent": ["warn"],
+      "vue/html-indent": ["warn"]
     },
     "parserOptions": {
       "parser": "babel-eslint"
