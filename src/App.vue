@@ -1,16 +1,16 @@
 <template>
-<v-app>
-  <v-toolbar>
-    <v-toolbar-title>
-      <span>Todo List</span>
-    </v-toolbar-title>
-  </v-toolbar>
-  <v-content>
-    <TodoApp
-      v-bind:todo-list="todoList"
-      placeholder="Enter todo and press enter. "/>
-  </v-content>
-</v-app>
+  <v-app>
+    <v-toolbar>
+      <v-toolbar-title>
+        <span>Todo List</span>
+      </v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <TodoApp
+        v-bind:todo-list="todoList"
+        placeholder="Enter todo and press enter. "/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
