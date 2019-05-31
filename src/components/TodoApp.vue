@@ -8,12 +8,12 @@
             v-on:click="item.isChecked = !item.isChecked"
             v-bind:key="item.id"
           >
-            <v-list-tile-avater>
+            <v-list-tile-avatar>
               <v-checkbox
                 v-model="item.isChecked"
                 v-bind:value="item.isChecked"
               ></v-checkbox>
-            </v-list-tile-avater>
+            </v-list-tile-avatar>
             <v-list-tile-content
               v-bind:class="{ done: item.isChecked }">
               {{ item.text }}
